@@ -1,0 +1,97 @@
+body {
+    background-image: url("../images/background.jpg");
+}
+
+header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 50px;
+    background-color: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    color: red;
+}
+
+.name {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+p {
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.instructions {
+    background-color: green;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 125px;
+    margin-top: 10px;
+}
+
+.random {
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+}
+
+.number {
+    background-color: purple;
+    text-align: center;
+    font-size: 50px;
+    margin-right: 10px;
+    width: 120px;
+    height: 80px;
+    color: red;
+}
+
+.power>* {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.outcome {
+    background-color: orange;
+    margin-left: 130px;
+    margin-top: -75px;
+    text-align: center;
+    width: 150px;
+    height: 70px;
+    color: white;
+}
+
+.click {
+    height: 100px;
+    width: 100px;
+}
+
+.score {
+    background-color: teal;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    width: 200px;
+    height: 45px;
+}
+
+h3 {
+    padding-top: 10px;
+    color: white;
+}
+
+.math {
+    background-color: teal;
+    font-size: 45;
+    color: white;
+    width: 200px;
+    height: 75;
+}
