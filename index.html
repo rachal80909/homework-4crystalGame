@@ -1,44 +1,35 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Crystal Collector</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <title>simple crystal game</title>
+
+    <style type="text/css">
+        .crystal-image {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1 id="name">Crystal Collector!!</h1>
-    </header>
-    <div class="instructions">
-        <p>At the start of each game you're given a random number</p>
-        <p> You must click on one of the four power crystals to match the random number</p>
-        <p>Each power crystal has a hidden number</p>
+    <div>
+        <p>You will be given a random numer at the start of the game. There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score. You win the game by mathcing your total score to random number, you
+            lose the game if your total scoreThe value of each crystal is hidden from you until you click on it. Each time the game starts, the game will change the value of each crystal.</p>
     </div>
-    <div class="random">
-        <div class="number"></div>
+    <h1>Number to Guess: <span id="number-to-guess"></span></h1>
 
-        <div class="outcome">
+    <!-- Note that this div is now empty. We will fill it dynamically -->
+    <div id="crystals">
+    </div>
 
-        </div>
+    <!-- JAVASCRIPT  -->
+    <!-- ========================================= -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <div class='power'>
-            <img src="assets/images/crystal-1.jpg" class='crystal' id='blue'>
-            <img src="assets/images/crystal-2.jpg" class='crystal' id='red'>
-            <img src="assets/images/crystal-3.jpg" class='crystal' id='yellow'>
-            <img src="assets/images/crystal-4.jpg" class='crystal' id='green'>
-        </div>
-
-        <div class='score'>
-            <h3>Crystal Power Level:</h3>
-        </div>
-
-        <div class='math'></div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
 </body>
 
 </html>
