@@ -3,6 +3,7 @@
 
 <head>
     <title>simple crystal game</title>
+    <link rel="stylesheet" href="style.css">
 
     <style type="text/css">
         .crystal-image {
@@ -11,25 +12,32 @@
         }
     </style>
 
-    <link rel="stylesheet" href="style.css"> imageCrystal.addClass("crystal-image"); // Each imageCrystal will be given a src link to the crystal image imageCrystal.attr("src", .assets/ "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
+
 </head>
+<h1>Crystal Collector</h1>
 
 <body>
     <div>
         <p>You will be given a random numer at the start of the game. There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score. You win the game by mathcing your total score to random number, you
             lose the game if your total scoreThe value of each crystal is hidden from you until you click on it. Each time the game starts, the game will change the value of each crystal.</p>
     </div>
+
     <h1>Number to Guess: <span id="number-to-guess"></span></h1>
 
-    <!-- Note that this div is now empty. We will fill it dynamically -->
+
     <div id="crystals">
+        <img src="./assets/blue.jpeg" alt="crystal" style="width:128px;height:128px;">
+        <img src="./assets/ruby.png" alt="crystal" style="width:128px;height:128px;">
+        <img src="./assets/green.jpeg" alt="crystal" style="width:128px;height:128px;">
+        <img src="./assets/yellow.jpeg" alt="crystal" style="width:128px;height:128px;">
+
     </div>
 
     <!-- JAVASCRIPT  -->
     <!-- ========================================= -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="./assets/javascript/game.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
