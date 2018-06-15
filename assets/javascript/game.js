@@ -1,8 +1,12 @@
 var yourScore = $(".outcome")
-    //var yourScore = getElementById(red, blue, yellow, green.onclick(math.sum));
+
+
+//var yourScore = getElementById(red, blue, yellow, green.onclick(math.sum));
 var wins = 0;
 var losses = 0;
 var currentScore = 0;
+
+
 //TODO: make sure random value will be between 19-120
 yourScore.html(`<h4>Wins: ${wins}</h4><h4>Losses: ${losses}</h4>`);
 var targetScore = $(".number");
