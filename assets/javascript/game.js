@@ -1,62 +1,87 @@
-// Institute Variables
-
-var targetNumber = "";
+var yourScore = $(".outcome")
+    //var yourScore = getElementById(red, blue, yellow, green.onclick(math.sum));
 var wins = 0;
 var losses = 0;
-var counter = 0;
-var images = ["./assets/blue.jpeg", "./assets/ruby.png", "./assets/green.jpeg", "./assets/yellow.jpeg"];
+var currentScore = 0;
+//TODO: make sure random value will be between 19-120
+yourScore.html(`<h4>Wins: ${wins}</h4><h4>Losses: ${losses}</h4>`);
+var targetScore = $(".number");
+var targetScoreVal = getRandomValue();
+targetScore.html(targetScoreVal);
+console.log('rand num', targetScore.text());
 
-// Functions
-
-function randomTargetNumber() {
-    targetNumber = Math.floor(Math.random() * 102) + 19;
+function addToScore(val) {
+    currentScore += parseInt(val);
+    $('.math').html(currentScore);
 }
 
-function resetCrystals() {
-    for (var i = 0; i < images.length; i++) {
-        var crystal = $("<img>");
-        crystal.addClass("crystal");
-        crystal.attr("src", images[i]);
-        crystal.attr("value", (Math.floor(Math.random() * 12) + 1));
-        crystal.attr("height", "100");
-        $(".crystal-images").append(crystal);
+var red = $("#red");
+//red.setAttribute("value", "5");
+console.log(red.value);
+
+var blue = $("#blue")
+    //console.log(blue.value);
+
+var yellow = $("#yellow");
+//console.log(yellow.value);
+
+var green = $("#green");
+//console.log(green.value);
+for (var i = 0; i < 4; i++) {
+    var keys = [red, blue, yellow, green];
+    var rand = Math.floor((Math.random() * 25) + 1);
+    keys[i].attr('data-value', rand);
+    console.log(rand);
+}
+// add an event listener to elements
+red.on('click', function() {
+    //this refers to red
+    var click = red.attr('data-value');
+    addToScore(click);
+    checkPlayerScore();
+});
+
+//parseInt(42.01) => 42
+//alert(parseInt('james')); // NaN (not a number)
+// Cafe Del Mar ChillWave 2 :)
+// .innerHTML returns a string, NaN
+
+blue.addEventListener('click', function() {
+    // this refers to blue
+    addToScore(this.value);
+    checkPlayerScore();
+});
+
+yellow.addEventListener('click', function() {
+    // this refers to blue
+    addToScore(this.value);
+    checkPlayerScore();
+});
+
+green.addEventListener('click', function() {
+    // this refers to blue
+    addToScore(this.value);
+    checkPlayerScore();
+});
+//var sum = parseInt(red.value) + parseInt(blue.value) + parseInt(yelow.value) + parseInt(green.value);
+
+// console.log (sum);
+function getRandomValue() {
+    return Math.floor((Math.random() * 120) + 1);
+
+}
+
+function checkPlayerScore() {
+    //yourScore, targetScore (parseFloat() is for decimals)
+    if (targetScoreVal === currentScore) {
+        alert('You win!');
+    } else if (currentScore > targetScoreVal) {
+        alert('You lose.');
     }
 }
 
-function resetHTML() {
-    $(".target-number").html(targetNumber);
-    $(".win-lose-counter").html("<p>Wins: " + wins + "</p>" + "<p>Losses: " + losses + "</p>");
-    $(".score-number").html(counter);
-    $(".crystal-images").empty();
-}
+// console.log(getRandomValue(10, 4));
 
-function totalReset() {
-    randomTargetNumber();
-    counter = 0;
-    resetHTML();
-    resetCrystals();
-}
+//make array of objects
 
-// Running Code
-
-// Inital Page Set Up
-randomTargetNumber();
-resetHTML();
-resetCrystals();
-
-// Click Functions
-function crystalClick() {
-    //attr returns first value of selected html element
-    counter += parseInt($(this).attr("value"));
-    $(".score-number").html(counter);
-    if (counter == targetNumber) {
-        wins++;
-        totalReset();
-    } else if (counter > targetNumber) {
-        losses++;
-        totalReset();
-    };
-};
-
-//Throughout life cycle of the document, accounting for every single time document is dynamically changed execute crystalClick function
-$(document).on("click", ".crystal", crystalClick);
+// console.log(crystalsGuess[0].crystal1);
