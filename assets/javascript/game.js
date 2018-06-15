@@ -41,10 +41,7 @@ red.on('click', function() {
     checkPlayerScore();
 });
 
-//parseInt(42.01) => 42
-//alert(parseInt('james')); // NaN (not a number)
-// Cafe Del Mar ChillWave 2 :)
-// .innerHTML returns a string, NaN
+
 
 blue.addEventListener('click', function() {
     // this refers to blue
@@ -53,13 +50,13 @@ blue.addEventListener('click', function() {
 });
 
 yellow.addEventListener('click', function() {
-    // this refers to blue
+    // this refers to yellow
     addToScore(this.value);
     checkPlayerScore();
 });
 
 green.addEventListener('click', function() {
-    // this refers to blue
+    // this refers to green
     addToScore(this.value);
     checkPlayerScore();
 });
