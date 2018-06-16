@@ -2,6 +2,7 @@ var yourScore = $(".yourScore");
 var winsAndLosses = $(".winsAndLosses");
 
 
+
 //var yourScore = getElementById(red, blue, yellow, green.onclick(math.sum));
 var wins = 0;
 var losses = 0;
@@ -100,16 +101,24 @@ function addToScore(click) {
     yourScore.html(currentScore);
 }
 
+function resetGame() {
+    currentScore = 0;
+    yourScore.html(currentScore);
+    targetScoreVal = getRandomValue();
+    targetScore.html(targetScoreVal);
+}
+
 function checkPlayerScore() {
     //yourScore, targetScore (parseFloat() is for decimals)
     if (targetScoreVal === currentScore) {
         alert('You win!');
         wins++;
         printWinsAndLosses();
+        resetGame();
     } else if (currentScore > targetScoreVal) {
         alert('You lose.');
         losses++;
         printWinsAndLosses();
-
+        resetGame();
     }
 }
